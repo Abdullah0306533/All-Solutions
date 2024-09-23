@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.projects.solutionpack.databinding.MainPageEachItomBinding;
-import com.projects.solutionpack.model.Tool;
+import com.projects.solutionpack.model.mainpagemodel.Tool;
 import java.util.List;
 
 public class MainPageAdapter extends RecyclerView.Adapter<MainPageAdapter.ViewHolder> {

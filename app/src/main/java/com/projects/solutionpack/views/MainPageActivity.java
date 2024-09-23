@@ -2,21 +2,19 @@ package com.projects.solutionpack.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.projects.solutionpack.R;
 import com.projects.solutionpack.adapters.MainPageAdapter;
 import com.projects.solutionpack.databinding.ActivityMainPageBinding;
-import com.projects.solutionpack.model.Tool;
-import com.projects.solutionpack.viewmodel.MyViewModel;
+import com.projects.solutionpack.model.mainpagemodel.Tool;
+import com.projects.solutionpack.viewmodel.MainPageViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,7 @@ public class MainPageActivity extends AppCompatActivity {
 
     private ActivityMainPageBinding activityMainPageBinding;
     private List<Tool> toolList = new ArrayList<>();
-    private MyViewModel viewModel;
+    private MainPageViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +44,7 @@ public class MainPageActivity extends AppCompatActivity {
         setUpRecyclerView();
 
         //to get signed out
-        viewModel=new MyViewModel(this);
+        viewModel=new MainPageViewModel(this);
         activityMainPageBinding.logOut.setOnClickListener(view -> {
             Toast.makeText(this, "signed out", Toast.LENGTH_SHORT).show();
             viewModel.getSignOut();});

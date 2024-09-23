@@ -13,12 +13,12 @@ import androidx.databinding.DataBindingUtil;
 import com.google.firebase.auth.FirebaseAuth;
 import com.projects.solutionpack.R;
 import com.projects.solutionpack.databinding.ActivityMainBinding;
-import com.projects.solutionpack.viewmodel.MyViewModel;
+import com.projects.solutionpack.viewmodel.MainPageViewModel;
 import com.projects.solutionpack.views.MainPageActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private MyViewModel viewModel;
+    private MainPageViewModel viewModel;
     private ActivityMainBinding activityMainBinding;
 
     @Override
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // Initialize ViewModel
-        viewModel = new MyViewModel(this);
+        viewModel = new MainPageViewModel(this);
 
         // Set up sign-up click listener
         activityMainBinding.signUp.setOnClickListener(view -> {

@@ -1,6 +1,4 @@
-package com.projects.solutionpack.model;
-
-import androidx.databinding.BindingAdapter;
+package com.projects.solutionpack.model.mainpagemodel;
 
 public class Tool {
     private String toolTitle;

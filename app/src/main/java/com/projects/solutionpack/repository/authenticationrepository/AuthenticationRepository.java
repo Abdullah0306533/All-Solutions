@@ -1,4 +1,4 @@
-package com.projects.solutionpack.repository;
+package com.projects.solutionpack.repository.authenticationrepository;
 
 import android.content.Context;
 import android.content.Intent;

@@ -6,6 +6,9 @@ plugins {
 android {
     namespace = "com.projects.solutionpack"
     compileSdk = 34
+    buildFeatures{
+        viewBinding=true
+    }
 
     defaultConfig {
         applicationId = "com.projects.solutionpack"

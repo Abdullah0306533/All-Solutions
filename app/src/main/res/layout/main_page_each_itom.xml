@@ -7,7 +7,7 @@
     <data>
         <variable
             name="fill"
-            type="com.projects.solutionpack.model.Tool" />
+            type="com.projects.solutionpack.model.mainpagemodel.Tool" />
     </data>
 
     <androidx.cardview.widget.CardView

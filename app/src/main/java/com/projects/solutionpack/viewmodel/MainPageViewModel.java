@@ -4,12 +4,12 @@ import android.content.Context;
 
 import androidx.lifecycle.ViewModel;
 
-import com.projects.solutionpack.repository.AuthenticationRepository;
+import com.projects.solutionpack.repository.authenticationrepository.AuthenticationRepository;
 
-public class MyViewModel extends ViewModel {
+public class MainPageViewModel extends ViewModel {
     private final AuthenticationRepository repository;
 
-    public MyViewModel(Context context) {
+    public MainPageViewModel(Context context) {
         repository = new AuthenticationRepository(context);
     }
 
@@ -20,4 +20,6 @@ public class MyViewModel extends ViewModel {
     public void getSignIn(String email,String password){repository.signIn(email, password);}
 
     public void getSignOut(){repository.signOut();}
+
+
 }
