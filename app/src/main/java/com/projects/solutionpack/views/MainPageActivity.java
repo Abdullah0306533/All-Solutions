@@ -53,6 +53,7 @@ public class MainPageActivity extends AppCompatActivity {
     private void initializeToolList() {
         // Example data for tools
         toolList.add(new Tool("Weather", "Check Weather and locations of cities all across the world", R.drawable.weather));
+        toolList.add(new Tool("Image To Text","Extract text from your Images",R.drawable.converter1));
         // Add more tools as needed
     }
 
@@ -63,17 +64,23 @@ public class MainPageActivity extends AppCompatActivity {
     }
 
     private void navigateToToolActivity(Tool tool) {
-        Intent intent;
+        Intent intent = null;
 
         // Navigate to different activities based on the tool selected
         switch (tool.getToolTitle()) {
             case "Weather":
                 // Launch activity for Tool 1
                 intent = new Intent(MainPageActivity.this, WeatherActivity.class);
-                startActivity(intent);
+
                 break;
                 //Todo:create alot of tools and place the startActivity at end of switch
+            case "Image To Text":
+
+            default:
+                //nothing
+                intent=new Intent(MainPageActivity.this,ImageToTextActivity.class);
         }
+        startActivity(intent);
 
 
     }
