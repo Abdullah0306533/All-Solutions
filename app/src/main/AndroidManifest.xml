@@ -20,6 +20,15 @@
         android:theme="@style/Theme.SolutionPack"
         tools:targetApi="31">
         <activity
+            android:name=".views.AddNewLogin"
+            android:exported="false" />
+        <activity
+            android:name=".views.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.Edit"
+            android:exported="false" />
+        <activity
             android:name=".views.ImageToTextActivity"
             android:exported="false" />
         <activity

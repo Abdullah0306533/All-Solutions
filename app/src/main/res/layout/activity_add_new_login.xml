@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.projects.solutionpack.model.passwordsavermodel.Logins" />
+        <variable
+            name="clickHandler"
+            type="com.projects.solutionpack.clickhandlers.SaveDataClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".views.AddNewLogin">
+
+        <EditText
+            android:id="@+id/editTextLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="270dp"
+            android:hint="Enter Login"
+            android:text="@={loginViewModel.login}"
+            android:textColorHint="#FFFF"
+            android:textColor="#FFFF"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textColor="#FFFF"
+            android:hint="Enter Password"
+            android:text="@={loginViewModel.password}"
+            android:textColorHint="#FFFF"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLogin" />
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:onClick="@{clickHandler::onSubmitBtnClicked}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="78dp"
+            android:background="@drawable/cloud_shape"
+            android:backgroundTint="#D3D3D3"
+            android:text="Save the login"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

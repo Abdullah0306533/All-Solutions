@@ -54,6 +54,7 @@ public class MainPageActivity extends AppCompatActivity {
         // Example data for tools
         toolList.add(new Tool("Weather", "Check Weather and locations of cities all across the world", R.drawable.weather));
         toolList.add(new Tool("Image To Text","Extract text from your Images",R.drawable.converter1));
+        toolList.add(new Tool("Password Saver","save your password ", androidx.credentials.R.drawable.ic_password));
         // Add more tools as needed
     }
 
@@ -71,16 +72,17 @@ public class MainPageActivity extends AppCompatActivity {
             case "Weather":
                 // Launch activity for Tool 1
                 intent = new Intent(MainPageActivity.this, WeatherActivity.class);
-
+                startActivity(intent);
                 break;
-                //Todo:create alot of tools and place the startActivity at end of switch
             case "Image To Text":
-
-            default:
-                //nothing
                 intent=new Intent(MainPageActivity.this,ImageToTextActivity.class);
+                startActivity(intent);
+                break;
+            case "Password Saver":
+                intent=new Intent(MainPageActivity.this,MainActivity.class);
+                startActivity(intent);
         }
-        startActivity(intent);
+
 
 
     }
