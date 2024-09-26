@@ -6,8 +6,10 @@ plugins {
 android {
     namespace = "com.projects.solutionpack"
     compileSdk = 34
-    buildFeatures{
-        viewBinding=true
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
     }
 
     defaultConfig {
@@ -29,9 +31,7 @@ android {
             )
         }
     }
-    buildFeatures{
-        dataBinding=true
-    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -39,7 +39,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -48,42 +47,26 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    // Firebase BoM
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)
 
-    //Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
-    //google analytics
-    implementation("com.google.firebase:firebase-analytics")
-    //FireBase Authentication
-    implementation("com.google.firebase:firebase-auth")
-    //material designs
-    implementation ("com.google.android.material:material:1.9.0")
+    // Material design components
+    implementation(libs.material.v190)
+    implementation(libs.cardview)
 
+    // Network management
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.livedata)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.adapter.rxjava3)
 
-    /**
-     * for network management
-     */
-    val lifecycle_version = "2.8.4"
+    // Offline database
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
 
-    // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version")
-    // LiveData
-    implementation("androidx.lifecycle:lifecycle-livedata:$lifecycle_version")
-
-    //retrofit & Gson
-    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
-    implementation ("com.google.code.gson:gson:2.11.0")
-
-    implementation ("com.squareup.retrofit2:adapter-rxjava3:2.11.0")
-    /**
-     * ofline databases
-     */
-    val room_version = "2.6.1"
-
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
-
-
-
-
+    // Image to text
+    implementation("com.google.mlkit:text-recognition:16.0.1")
 }

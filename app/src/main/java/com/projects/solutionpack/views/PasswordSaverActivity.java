@@ -31,7 +31,7 @@ import com.projects.solutionpack.viewmodel.ViewModelPasswordSaver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class PasswordSaverActivity extends AppCompatActivity {
 
     // Click Handlers
     private MainActivityClickHandler mainHandler;
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     viewModel.delete(l);
                 }
                     else{
-                        Intent i=new Intent(MainActivity.this, Edit.class);
+                        Intent i=new Intent(PasswordSaverActivity.this, Edit.class);
                         i.putExtra("id",l.getId());
                         startActivity(i);
 
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         // Custom behavior when the back button is pressed
         super.onBackPressed();
-        // Finish the current activity and all parent activities
-        finishAffinity();
+        Intent i=new Intent(PasswordSaverActivity.this,MainPageActivity.class);
+        startActivity(i);
     }
 }

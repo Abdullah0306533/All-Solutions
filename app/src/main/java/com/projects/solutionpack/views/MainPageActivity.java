@@ -79,7 +79,7 @@ public class MainPageActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case "Password Saver":
-                intent=new Intent(MainPageActivity.this,MainActivity.class);
+                intent=new Intent(MainPageActivity.this, PasswordSaverActivity.class);
                 startActivity(intent);
         }
 

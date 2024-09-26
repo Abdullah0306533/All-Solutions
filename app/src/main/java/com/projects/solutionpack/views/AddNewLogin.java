@@ -62,7 +62,7 @@ public class AddNewLogin extends AppCompatActivity {
         // Custom behavior when the back button is pressed
         super.onBackPressed();
         // Additional code if needed
-        Intent i=new Intent(AddNewLogin.this, MainActivity.class);
+        Intent i=new Intent(AddNewLogin.this, PasswordSaverActivity.class);
         startActivity(i);
     }
 }

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Toast;
 
-import com.projects.solutionpack.views.MainActivity;
+import com.projects.solutionpack.views.PasswordSaverActivity;
 import com.projects.solutionpack.model.passwordsavermodel.Logins;
 import com.projects.solutionpack.viewmodel.ViewModelPasswordSaver;
 
@@ -29,7 +29,7 @@ public class SaveDataClickHandler {
             Toast.makeText(context, "Fill the fields", Toast.LENGTH_SHORT).show();
         } else {
             // Create intent to start MainActivity
-            Intent intent = new Intent(context, MainActivity.class);
+            Intent intent = new Intent(context, PasswordSaverActivity.class);
 
             // Create a new instance of Logins with provided login and password
             Logins newLogin = new Logins(logins.getLogin(), logins.getPassword());
